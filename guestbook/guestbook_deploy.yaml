@@ -14,7 +14,7 @@ spec:
         app: guestbook
     spec:
       containers:
-      - image: frozentail/cicd_guestbook:1.0
+      - image: frozentail/cicd_guestbook:20240724171900_1
         name: sb-guestbook
         envFrom:
         - configMapRef:

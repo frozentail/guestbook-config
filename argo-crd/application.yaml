@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: guestbook
+    repoURL: 'https://github.com/yu3papa/guestbook-config.git'
+    targetRevision: master
+  project: dev
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
